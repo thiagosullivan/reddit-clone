@@ -52,13 +52,13 @@ export function SettingsForm({username}: {username: string | null | undefined}){
                 maxLength={21}
             />
 
-            {state?.status === 'error' && (<p className="text-red-500">{state.message}</p>)}
+            {state?.status === 'error' && (<p className="text-destructive">{state.message}</p>)}
 
             <div className="w-full flex mt-5 gap-x-5 justify-end">
                 <Button variant="secondary" asChild type="button">
                     <Link href="/">Cancel</Link>
                 </Button>
-                <SubmitButton />
+                <SubmitButton text="Change Username"/>
             </div>
         </form>
     )
