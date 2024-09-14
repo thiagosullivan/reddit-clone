@@ -69,3 +69,6 @@
   }
 }
 
+.ProseMirror:focus {
+  outline: none;
+}
