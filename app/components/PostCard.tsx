@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card } from "@/components/ui/card";
 import { MessageCircle } from "lucide-react";
@@ -42,7 +43,7 @@ export function PostCard({id, imageString, jsonContent, subName, title, userName
                 </div>
 
                 <div className="px-2">
-                    <Link href="/">
+                    <Link href={`/post/${id}`}>
                         <h1 className="font-medium mt-1 text-lg">{title}</h1>
                     </Link>
                 </div>
