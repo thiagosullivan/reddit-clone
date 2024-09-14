@@ -20,6 +20,7 @@
     "@tiptap/pm": "^2.6.6",
     "@tiptap/react": "^2.6.6",
     "@tiptap/starter-kit": "^2.6.6",
+    "@troop.com/tiptap-react-render": "^0.0.2",
     "@uploadthing/react": "^6.8.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
