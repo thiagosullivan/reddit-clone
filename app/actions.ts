@@ -196,3 +196,25 @@ export async function handleVote(formData: FormData) {
   
     return revalidatePath("/", "page");
 }
+
+export async function createComment(formData: FormData){
+    const {getUser} = getKindeServerSession();
+    const user = await getUser();
+
+    if(!user){
+        return redirect("/api/auth/login");
+    }
+
+    const commentText = formData.get('comment') as string;
+    const postId = formData.get('postId') as string;
+
+    const data = await prisma.comment.create({
+        data: {
+            text: commentText,
+            userId: user.id,
+            postId: postId,
+        },
+    });
+
+    return revalidatePath(`/post/${postId}`);
+}
