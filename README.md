@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## This project is a [Reddit Clone](https://www.reddit.com/)
 
-## Getting Started
+This project use [Prisma](https://www.prisma.io/) as ORM and store the database on [Supabase](https://supabase.com/).
 
-First, run the development server:
+Some functionalities that you can find on this project:
+* Project in [Next JS](https://nextjs.org/)
+* Styled in [Tailwind CSS](https://tailwindcss.com/)
+* Authentication using [Kinde](https://kinde.com/)
+* Light/Dark/System mode theme
+* Create of a Subreddit Community
+* Create a post on the Subreddit Community
+* Use text and image on post
+* Comments on the post
+* Change username
+* Pagination
+* Dynamic component to show how many comments every post get in realtime
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Some images from the project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Home page**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![](https://i.ibb.co/D5S17Cw/localhost-3000-1.png "Homepage")
+___
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Post Creation**
 
-## Learn More
+![](https://i.ibb.co/yspKQ1v/localhost-3000-2.png "Post Creation")
+___
 
-To learn more about Next.js, take a look at the following resources:
+**Dark Mode**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![](https://i.ibb.co/1Xt9GWK/localhost-3000-3.png "Dark Mode")
+___
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Post and comments**
 
-## Deploy on Vercel
+![](https://i.ibb.co/HBmbhTc/localhost-3000-4.png "Post and comments")
+___
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Menu options**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![](https://i.ibb.co/5nP3RfR/Screenshot-14.png "Menu options")
