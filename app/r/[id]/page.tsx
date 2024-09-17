@@ -31,6 +31,11 @@ async function getData(name: string, searchParams: string){
                     take: 10,
                     skip: searchParams ? (Number(searchParams) - 1) * 10 : 0,
                     select: {
+                        Comment: {
+                            select: {
+                                id: true
+                            },
+                        },
                         title: true,
                         imageString: true,
                         id: true,
@@ -71,6 +76,7 @@ export default async function SubredditRoute({params, searchParams}: {params: {i
                         imageString={post.imageString}
                         subName={data.name}
                         title={post.title}
+                        commentAmount={post.Comment.length}
                         userName={post.User?.userName as string}
                         jsonContent={post.textContent}
                         voteCount={post.vote.reduce((acc, vote) => {

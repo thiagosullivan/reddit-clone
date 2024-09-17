@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { handleVote } from "@/app/actions";
+import { CommentForm } from "@/app/components/CommentForm";
 import { CopyLink } from "@/app/components/CopyLink";
 import { RenderToJson } from "@/app/components/RenderToJson";
 import { DownVote, UpVote } from "@/app/components/SubmitButtons";
@@ -27,6 +29,21 @@ async function getData(id: string,){
                 select: {
                     voteType: true,
                 }
+            },
+            Comment: {
+                orderBy: {
+                    createdAt: 'desc',
+                },
+                select: {
+                    id: true,
+                    text: true,
+                    User: {
+                        select: {
+                            imageUrl: true,
+                            userName: true,
+                        },
+                    },
+                },
             },
             Subreddit: {
                 select: {
@@ -97,10 +114,33 @@ export default async function PostPage({params}: {params: {id: string}}){
                         <div className="flex gap-x-5 items-center mt-3">
                             <div className="flex items-center gap-x-1">
                                 <MessageCircle className="h-4 w-4 text-muted-foreground" />
-                                <p className="text-muted-foreground font-medium text-xs">32 Comments</p>
+                                <p className="text-muted-foreground font-medium text-xs">{data.Comment.length} Comments</p>
                             </div>
 
                             <CopyLink id={params.id} />
+                        </div>
+
+                        <CommentForm postId={params.id}/>
+
+                        <Separator className="my-5" />
+
+                        <div className="flex flex-col gap-y-7">
+                            {data.Comment.map((item) => (
+                                <div key={item.id} className="flex flex-col">
+                                    <div className="flex items-center gap-x-3">
+                                        <img
+                                            src={
+                                                item.User?.imageUrl ?
+                                                item.User.imageUrl :
+                                                'https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg'}
+                                            alt="Avatar of user"
+                                            className="w-7 h-7 rounded-full"
+                                        />
+                                        <h3 className="text-sm font-medium">{item.User?.userName}</h3>
+                                    </div>
+                                    <p className="ml-10 text-secondary-foreground text-sm tracking-wide">{item.text}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </Card>
